@@ -14,10 +14,10 @@ app.use('/api/users/', userRoute);
 app.use('/api/transactions/', transactionsRoute);
 
 //static files
-app.use(express.static(path.join(__dirname, '../client/build')))
+app.use(express.static(path.join(__dirname, './client/build')))
 
 app.get('*', function(req,res) {
-  res.sendFile(path.join(__dirname, '../client/build'));
+  res.sendFile(path.join(__dirname, './client/build/index.js'));
 })
 
 const port = process.env.PORT || 5000;
